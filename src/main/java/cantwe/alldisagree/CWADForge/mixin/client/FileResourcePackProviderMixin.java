@@ -1,7 +1,7 @@
 package cantwe.alldisagree.CWADForge.mixin.client;
 
 
-//POTENTIALLY USE
+//POTENTIALLY USE //TODO this causes crashes + Is reason for missing textures
 /*@Environment(EnvType.CLIENT)
 @Mixin(FileResourcePackProvider.class)
 public abstract class FileResourcePackProviderMixin {
