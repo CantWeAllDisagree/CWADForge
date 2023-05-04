@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i",
+    "S "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "i": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "smitheesfoundry:crude_chisel",
+    "count": 1
+  }
+}

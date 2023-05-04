@@ -1,0 +1,60 @@
+plugins {
+	alias libs.plugins.loom
+	id 'maven-publish'
+}
+
+archivesBaseName = project.archives_base_name
+version = project.version
+group = project.maven_group
+
+repositories {
+	maven { url "https://cursemaven.com" }
+}
+
+dependencies {
+	minecraft libs.minecraft
+	mappings variantOf(libs.yarn) { classifier 'v2' }
+	modImplementation libs.fabricloader
+	modImplementation libs.fabric
+
+	modImplementation "curse.maven:arrp-463113:3901211"
+	include "curse.maven:arrp-463113:3901211"
+}
+loom {
+	accessWidenerPath = file("src/main/resources/smitheesfoundry.accesswidener")
+}
+processResources {
+	inputs.property "version", project.version
+	filteringCharset "UTF-8"
+
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
+}
+
+def targetJavaVersion = 17
+tasks.withType(JavaCompile).configureEach {
+	it.options.encoding = "UTF-8"
+	if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+		it.options.release = targetJavaVersion
+	}
+}
+
+java {
+	def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+	if (JavaVersion.current() < javaVersion) {
+		toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+	}
+	withSourcesJar()
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.archivesBaseName}"}
+	}
+}
+
+publishing {
+	publications {}
+	repositories {}
+}

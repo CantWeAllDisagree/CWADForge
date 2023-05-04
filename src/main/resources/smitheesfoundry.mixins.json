@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cantwe.alldisagree.CWADForge.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BucketItemAccessor",
+    "LifeCycleResourceManagerImplMixin",
+    "RegistryEntryListMixin"
+  ],
+  "client": [
+    "client.LanguageManagerMixin",
+    "client.ModelLoaderMixin",
+    "client.MouseAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
