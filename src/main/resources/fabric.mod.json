@@ -19,13 +19,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "cantwe.alldisagree.smitheesfoundry.Main"
+      "cantwe.alldisagree.CWADForge.Main"
     ],
     "client": [
-      "cantwe.alldisagree.smitheesfoundry.Client"
+      "cantwe.alldisagree.CWADForge.Client"
     ],
     "preLaunch": [
-      "cantwe.alldisagree.smitheesfoundry.PreLaunch"
+      "cantwe.alldisagree.CWADForge.PreLaunch"
     ]
   },
   "mixins": [

@@ -11,7 +11,8 @@
   "client": [
     "client.LanguageManagerMixin",
     "client.ModelLoaderMixin",
-    "client.MouseAccessor"
+    "client.MouseAccessor",
+    "client.PackScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
